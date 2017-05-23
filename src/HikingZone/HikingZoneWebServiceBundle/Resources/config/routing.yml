@@ -1,0 +1,3 @@
+hiking_zone_hiking_zone_web_service_homepage:
+    path:     /
+    defaults: { _controller: HikingZoneHikingZoneWebServiceBundle:Default:index }

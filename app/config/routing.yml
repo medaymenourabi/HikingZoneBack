@@ -1,0 +1,7 @@
+hiking_zone_hiking_zone_web_service:
+    resource: "@HikingZoneHikingZoneWebServiceBundle/Controller/UserController.php"
+    type: annotation
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
