@@ -73,4 +73,30 @@ class UserController extends Controller
         }
         return $this->render('@HikingZoneHikingZoneWebService/Default/404notfound.html.twig');
     }
+    /**
+     * @Route("/api/signin")
+     * @Method("POST")
+     */
+   public function SignInAction(Request $request){
+        $body = $request->getContent();
+        $data = json_decode($body, true);
+        $em = $this->getDoctrine()->getManager();
+        $email=$data["email"];
+        $password=$data["password"];
+        $user = $em->getRepository('HikingZoneHikingZoneWebServiceBundle:User')->findBy(array('email'=>$email
+        ,'password'=>$password));
+        if(count($user)==1){
+            $userc = $em->getRepository('HikingZoneHikingZoneWebServiceBundle:User')->findOneBy(array('email'=>$email
+            ,'password'=>$password));
+            if($userc->getEnabled()==0){
+                $response = json_encode(2);
+
+            }else{
+                $response = json_encode(1);
+            }
+        }else{
+            $response = json_encode(0);
+        }
+        return new Response($response);
+    }
 }
