@@ -10,8 +10,10 @@ $client = new \GuzzleHttp\Client([
 ]);
 
 $username = 'hama';
-$email='hama17@gmail.com';
-$password ='lkjlkpplj';
+$email='hama17@gmak99jkjil.com';
+$password ='lkjlkpjkhkjhkjkjplj';
+$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
 $data = array(
   'username'=>$username,
     'email'=>$email,

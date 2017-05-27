@@ -83,7 +83,14 @@ class User
      * @ORM\Column(name="phonenumber", type="integer",nullable=true)
      */
     private $phonenumber;
-
+    /**
+     * @ORM\Column(name="enabled",type="integer",nullable=true)
+     */
+    private $enabled;
+    /**
+     * @ORM\Column(name="passwordToken",type="string",nullable=true)
+     */
+    private $passwordToken;
 
     /**
      * Get id
@@ -310,5 +317,38 @@ class User
     {
         return $this->phonenumber;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * @param mixed $enabled
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPasswordToken()
+    {
+        return $this->passwordToken;
+    }
+
+    /**
+     * @param mixed $passwordToken
+     */
+    public function setPasswordToken($passwordToken)
+    {
+        $this->passwordToken = $passwordToken;
+    }
+
 }
 
